@@ -1,13 +1,14 @@
 function mergeSort(array) {
     // change code below this line
-  let answer1 = [],
-      answer2 = [],
+  let merge1 = [],
+      merge2 = [],
       answer = [];
 
   if(array.length > 2){
-    let pivot = Math.floor(array.length/2),
-    answer1 = array.slice(0, pivot);
-    answer2 = array.slice(pivot+1, array.length);
+    let pivot = Math.floor(array.length/2);
+    merge1 = array.slice(0, pivot);
+    merge2 = array.slice(pivot, array.length);
+    //  console.log(merge1,merge2);
     
   }
 
@@ -18,8 +19,8 @@ function mergeSort(array) {
     return array;
   }
 
-  answer = mergeSort(answer1).concat(mergeSort(answer2));
-  console.log(answer);
+   answer = mergeSort(merge1).concat(mergeSort(merge2));
+  // console.log(answer);
   return answer;
   
    
@@ -28,7 +29,11 @@ function mergeSort(array) {
 
   
  
+// console.log(mergeSort([1 ]));
 
+// console.log(mergeSort([ 234, 92]));
+
+console.log(mergeSort([1, 42, 234, 92,34,523,534,32]));
   
-  mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+ console.log(mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]));
   
