@@ -1,11 +1,25 @@
 function checkCashRegister(price, cash, cid) {
     let change = cash-price.toFixed(2);
-    let cashOnHand=0;
+    let cashOnHand = [];
+    let cashInBox = [
+      {denom:'PENNY', amount: 0.01 },
+      {denom:'NICKEL', amount: 0.05 },
+      {denom:'DIME', amount: 0.1 },
+      {denom:'QUARTER', amount: 0.25 },
+      {denom:'DOLLAR', amount: 1 },
+      {denom:'FIVE', amount: 5 },
+      {denom:'TEN', amount: 10 },
+      {denom:'TWENTY', amount: 20 },
+      {denom:'HUNDRED', amount: 100 },
+    ]
+    
+    // get the number of each denomination in the cash drawer
     for(let i=0;i<cid.length;i++){
-     cashOnHand = cashOnHand+cid[i][1];
+     cashOnHand.push(Math.round(cid[i][1]/cashInBox[i].amount));
     }
-    cashOnHand=cashOnHand.toFixed(2);
+    console.log(cashOnHand);
    
+    //initialize the returned object
     let obj={
       status:'',
       change:[]
@@ -23,8 +37,7 @@ function checkCashRegister(price, cash, cid) {
    
    
    
-   
-   
+  
       
     }
    
