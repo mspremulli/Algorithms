@@ -1,22 +1,28 @@
 function insertionSort(array) {
     // change code below this line
-    let newArr =[];
-    for(let i = 0; i<array.length; i++){
-      newArr.push(array[i]);
-      for(let j = newArr.length-1; j>0; j--){
-        let temp = newArr[i];
-        if(newArr[j] < array[i]){
-          newArr[i] = newArr[j];
-          newArr[j] = temp;
-        }
-      }
-    }
+    for(let i=0;i<array.length;i++){
+      // console.log(i,array.length);
+      let j=0;
+      while(array[i] > array[j] && j< array.length){
 
-    console.log(newArr);
+        
+        j++;
+      }
+      console.log(i,j)
+      console.log(array.slice(0,j))
+      console.log(array.slice(j,j+1))
+      console.log(array.slice(j+1,array.length+1))
+      
+        //array = [...array.slice(0,j),array.slice(j,j+1),array.slice(j+1,array.length+1)].flat();
+      //  console.log(array,i,j);
+    }
     
-    return newArr;
+
+     console.log(array);
+    
+    return array;
     // change code above this line
   }
   
-  insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+  insertionSort([4, 2, 8, 345, 123]);
   
