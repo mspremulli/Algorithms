@@ -1,2 +1,2 @@
 # FreeCodeCamp
- A collection of projects done from Freecodecamp.com for practice
+ A collection of algorthims done from Freecodecamp.com, hackerrank.com and other practice websites.
