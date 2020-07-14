@@ -1,16 +1,18 @@
 const birthdayCakeCandles = (candles) => {
   let maxHeight = 0;
   let tallestCandles = 1;
-  for(let i = 0; i < candles.length; i++){
-      if(candles[i] === maxHeight){
-          tallestCandles++;
-      }
-      else if(candles[i] > maxHeight){
-          tallestCandles = 1;
-          maxHeight = candles[i];
-      }
-       
+
+  candles.forEach(candle => {
+    if(candle === maxHeight){
+      tallestCandles++;
   }
+  else if(candle > maxHeight){
+      tallestCandles = 1;
+      maxHeight = candle;
+  }
+  });
+
+
   return tallestCandles;
 
 }

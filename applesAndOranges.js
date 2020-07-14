@@ -7,12 +7,15 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
       numApples = 0,
       numOranges = 0;
       // console.log(orangeMax, orangeMin);
-  for (let i = 0; i < apples.length; i++) {
-      if(apples[i] >= appleMin && apples[i] <= appleMax) numApples++;
-  }
-  for (let i = 0; i < oranges.length; i++) {
-    if(oranges[i] >= orangeMin && oranges[i] <= orangeMax) numOranges++;  
-  }
+
+  apples.forEach(apple => {
+    if(apple >= appleMin && apple <= appleMax) numApples++;
+  });
+
+  oranges.forEach(orange => {
+    if(orange >= orangeMin && orange <= orangeMax) numOranges++; 
+  });
+
   console.log(numApples);
   console.log(numOranges);
 }
