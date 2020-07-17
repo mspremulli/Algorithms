@@ -1,6 +1,7 @@
 // Complete the angryProfessor function below.
 const angryProfessor = (threshold, studentArrivalArray) => {
   let numberofStudentsOnTime = 0;
+
   studentArrivalArray.forEach(student => {
     if(student <= 0) numberofStudentsOnTime++;
   });
