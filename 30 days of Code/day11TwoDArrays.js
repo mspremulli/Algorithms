@@ -8,7 +8,8 @@ const  hourglassSum = (arr) => {
       for(let j = 0; j < arrLength; j++){
       //calculate the sum of the hourglass and update the maximum sum so far
       hourglassSum = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2];
-      highestSum = (hourglassSum > highestSum) ? hourglassSum: highestSum;
+      // highestSum = (hourglassSum > highestSum) ? hourglassSum: highestSum;
+      highestSum = Math.max(hourglassSum, highestSum);
     }
   }
   return highestSum;
