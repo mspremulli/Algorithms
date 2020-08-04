@@ -1,6 +1,6 @@
 // Complete the hourglassSum function below.
 const  hourglassSum = (arr) => {
-  let highestSum = -99999999,
+  let highestSum = Number.MIN_VALUE,
       hourglassSum = 0,
       arrLength = arr[0].length - 2;
     //loop through each starting point for the hourglass
