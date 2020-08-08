@@ -2,7 +2,8 @@
 
 //output: lexicographically smallest staring string
 function reverseShuffleMerge(s) {
-  let newString = [];
+  let newString = [],
+      reversedString = [];
 
   //create array of true/false values for each letter
   let letterChecker = [];
@@ -12,20 +13,35 @@ function reverseShuffleMerge(s) {
 
   //split half of the letters into a new array in alphabetical order
   //the letter pushed should be identical to the ones not pushed
-  for (let x = 0; x < s.length; x++) {
-    const charCode = s[x].charCodeAt() - 97;
+  //build reverse of the string too
+  s.split('').forEach(letter => {
+      
+  
+    const charCode = letter.charCodeAt() - 97;
 
     if (!letterChecker[charCode]) {
       //push letter into new array with insertion sort to create an ordered array
-      newString.push(s[x]);
+      
+      //if new string is empty or if the letter goes at end put it there
+      if(newString.length === 0 || letter >= newString[newString.length - 1]){
+        newString.push(letter);
+        reversedString.unshift(letter);
+      }
+      //else look through the array and put it in its proper place
+      else{
+        let i = 0;
+        while(i < newString.length && letter > newString[i]) {
+          i++;
+        }
+        reversedString.splice(reversedString.length - i, 0, letter);
+        newString.splice(i, 0, letter);
+      }
     }
     letterChecker[charCode] = !letterChecker[charCode];
-  }
- 
-  let regular = [...newString];
-  let reverse = newString.reverse();
-  console.log(regular);
-  console.log(reverse);
+  })
+  
+  console.log(newString);
+  console.log(reversedString);
 
 
   //check if the new string can be merged with its reverse to create the orignal string
@@ -36,3 +52,4 @@ function reverseShuffleMerge(s) {
 reverseShuffleMerge("eggegg");
 reverseShuffleMerge("aeiouuoiea");
 reverseShuffleMerge("abcdefgabcdefg");
+reverseShuffleMerge("cceeccaaccaabddddb");
