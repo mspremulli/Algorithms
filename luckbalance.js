@@ -25,7 +25,6 @@ const luckBalance = (k, contests) => {
   //subtract first k values, add the rest
     importantContests.forEach((contest,index )=> {
       
-  
     if(index < k){
       maxPossibleLuck += contest;
     }
