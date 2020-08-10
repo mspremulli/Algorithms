@@ -6,6 +6,32 @@ function reverseShuffleMerge(s) {
       reversedString = [],
       orignalString = s.split('');
 
+  //create an object of how many of each letter are in the string
+  let letterCount = [];
+  // for(let i = 0; i < 26; i++){
+  //   letterCount.push({letter: String.fromCharCode(i+97), count: 0})
+  // }
+  
+  //loop through the given string and count each letters
+  s.split('').forEach(letter => {
+    //if letter is in add 1 to counter
+    if(letterCount.filter(obj => obj.char === letter).length > 0) {
+     letterCount.filter(obj => {if(obj.char === letter) obj.count++});
+    }
+    //if letter is not in add it and set count to 1
+    else {
+      letterCount.push({char: letter, count:1});
+    }
+  });
+
+
+  console.log(letterCount);
+
+
+
+
+
+
   //create array of true/false values for each letter
   let letterChecker = [];
   for (let x = 0; x < 26; x++) {
@@ -46,7 +72,7 @@ function reverseShuffleMerge(s) {
 
 
   //check if the new string can be merged with its reverse to create the orignal string
-  console.log(canBeMerged(orignalString, newString, reversedString));
+  //  console.log(canBeMerged(orignalString, newString, reversedString));
 
   //if it can't adjust the new string to be in slightly less lexographical order, then try again
   
@@ -67,11 +93,11 @@ const canBeMerged = (orignalString, newString, reversedString) => {
         break;
       };
     };
-  console.log(passed);
+  // console.log(passed);
   return passed;
 }
 
 reverseShuffleMerge("eggegg");
-// reverseShuffleMerge("aeiouuoiea");
-// reverseShuffleMerge("abcdefgabcdefg");
-// reverseShuffleMerge("cceeccaaccaabddddb");
+reverseShuffleMerge("aeiouuoiea");
+reverseShuffleMerge("abcdefgabcdefg");
+reverseShuffleMerge("cceeccaaccaabddddb");
