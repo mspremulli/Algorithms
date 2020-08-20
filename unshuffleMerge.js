@@ -43,3 +43,11 @@ reverseShuffleMerge("eggegg");
 reverseShuffleMerge("aeiouuoiea");
 reverseShuffleMerge("abcdefgabcdefg");
 reverseShuffleMerge("cceeccaaccaabddddb");
+
+/*
+given:                      s ∈ merge(reverse(A), shuffle(S))
+we can reverse everything:  reverse(s) ∈ merge( reverse( reverse(A), shuffle(A)) )
+factor out the reverse:     reverse(s) ∈ merge( reverse(shuffle(A), reverse(reverse(A)) )
+we can prove:               shuffle(A) === reverse(shuffle(A)) and reverse(reverse(A)) === A
+which means:                reverse(s) ∈ merge(shuffle(S), A)
+*/
