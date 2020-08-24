@@ -10,9 +10,9 @@ function whatFlavors(prices, budget) {
     else iceCreamHashTable[price] = [index + 1];
   });
 
-  // remove the case where a single ice cream is chosen twice
-  if(budget % 2 === 0 && iceCreamHashTable[budget/2].length === 1){
-   iceCreamHashTable.splice(budget/2,1,null);
+  // remove the edge case where a single ice cream is chosen twice
+  if(budget % 2 === 0 && iceCreamHashTable[budget / 2].length === 1){
+   iceCreamHashTable.splice(budget / 2, 1, null);
   }
 
   //loop through the prices until a match is found

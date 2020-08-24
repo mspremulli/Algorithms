@@ -17,14 +17,10 @@ function convertHTML(str) {
     }
   })
   .join('');
-
-  console.log(arr);
   return arr;
 }
 
-convertHTML("Dolce & Gabbana");
-
-
+console.log(convertHTML("Dolce & Gabbana"));
 
 // Convert the characters &, <, >, " (double quote), and ' (apostrophe),
 //  in a string to their corresponding HTML entities.

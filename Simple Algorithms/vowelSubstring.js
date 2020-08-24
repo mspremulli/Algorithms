@@ -9,8 +9,7 @@
 
 function findSubstring(s, k) {
   let maxNumVowels = 0,
-      maxVowles = '';
-  // Write your code here
+    maxVowles = '';
   let regEx = /[aeiou]/g;
   let vowelCount;
   if(!s.match(regEx)){

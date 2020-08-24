@@ -2,7 +2,6 @@ const migratoryBirds = (arr) => {
   let countBirdTypes = [0,0,0,0,0],
       countBirdType = 0,
       maxId = 0;
-
   //build counting array
   arr.forEach(bird => {
     countBirdTypes[bird-1]++;
@@ -16,7 +15,6 @@ const migratoryBirds = (arr) => {
       maxId = i + 1;
     }
   }
-
   return maxId;
 }
 

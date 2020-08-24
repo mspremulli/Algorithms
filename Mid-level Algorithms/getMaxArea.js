@@ -15,7 +15,7 @@ const getMaxArea = (w, h, boundaryType, boundaryDist) => {
       topBorder = h,
       botBorder = 0,
       maxArea = [];
- for(let i = 0; i< boundaryType.length; i++){
+ for(let i = 0; i < boundaryType.length; i++){
     boundaryType[i] === false ? 
     (
       (topBorder - boundaryDist[i] > boundaryDist[i] - botBorder) ? 

@@ -7,10 +7,7 @@ function pairElement(str) {
       default: return [e,'G'];
     }
   });
-
-  
-  console.log(answer);
   return answer;
 }
 
-pairElement("GCG");
+console.log(pairElement("GCG"));

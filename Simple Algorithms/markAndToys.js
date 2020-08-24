@@ -8,13 +8,13 @@ function maximumToys(toyPrices, budget) {
   toyPrices = toyPrices.filter(price => budget > price );
   toyPrices.sort((a, b) => a - b);
   for(let i = 0; i < toyPrices.length; i++) {
-      if (budget >= toyPrices[i]) {
-        toyCount++;
-        budget-= toyPrices[i];
-      }
-      else {
-        break;
-      }
+    if (budget >= toyPrices[i]) {
+      toyCount++;
+      budget-= toyPrices[i];
+    }
+    else {
+      break;
+    }
   }
   return toyCount;
 }

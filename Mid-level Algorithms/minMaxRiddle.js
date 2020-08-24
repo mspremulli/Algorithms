@@ -19,12 +19,15 @@ function riddle(arr) {
       j--;
     }
   });
-  // console.log(minValueDistance);
+  console.log(minValueDistance);
   //transfer object to a hash table
   let hashTable = [];
   minValueDistance.forEach(item => {
     hashTable[item.distance] = !hashTable[item.distance] ? item.value : Math.max(hashTable[item.distance],item.value);
   });
+
+console.log(hashTable);
+
   //loop through window and add update the hashtable value until its a full array
   for(let i = arr.length; i > 0  ; i--){
     if(!hashTable[i] || hashTable[i] < hashTable[i + 1]) hashTable[i] = hashTable[i + 1];

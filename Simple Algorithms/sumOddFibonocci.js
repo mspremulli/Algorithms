@@ -14,15 +14,12 @@ function sumFibs(num) {
   return sum;
 }
 
-
 //get the current fibonocci number
 function getFib(index) {
-
   if(index > 1){
     return(getFib(index-1) + getFib(index-2));
   }
   else return 1;
-
 }
 
 

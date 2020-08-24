@@ -1,6 +1,6 @@
 // Complete the countingValleys function below.
 const countingValleys = (n, s) => {
-  let  altitude = 0,
+  let altitude = 0,
       numValley = 0,
       inValley = false;
   s = s.split('');
