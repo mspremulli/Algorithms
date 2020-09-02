@@ -14,18 +14,18 @@ const isValid = (initialString) => {
   //get the mode
   let mode = getMode(letterCounts);
 
-  //check if the counts are off more than 1 time
-  let countOff = 0;
+  //check if the counts are off more than 1 
+  let numberOfLettersNeededToBeChanged = 0;
   letterCounts.forEach(count => {
     if(count !== mode){
-      countOff++;
+      numberOfLettersNeededToBeChanged++;
       if((count > mode + 1 || count < mode - 1) && count !== 1){
         answer = "NO";
       }
     }
   });
 
-  if(countOff > 1) answer = "NO";
+  if(numberOfLettersNeededToBeChanged > 1) answer = "NO";
 
   // console.log(letterCounts);
   // console.log(mode);
