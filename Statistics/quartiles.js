@@ -7,25 +7,19 @@ function processData(input) {
   let q1, q2, q3, half;
   let length = input.length;
   // console.log(input);
+
   if(isOdd(length)){
       half = (length - 1)/2;
       q2 = input[half];
-      q1 = input.splice(0,half);
       q3 = input.splice(1,half);
   }
   else {
       half = (length)/2;
       q2 = getMiddleOfArray(input);
-      q1 = input.splice(0,half);
       q3 = input.splice(0,half);
   }
-
-  
-  // console.log(q1);
-  // console.log(q2);
-  // console.log(q3);
-
-  q1 = getMiddleOfArray(q1);
+     
+  q1 = getMiddleOfArray(input.splice(0,half));
   q3 = getMiddleOfArray(q3);
 
   console.log(q1);
